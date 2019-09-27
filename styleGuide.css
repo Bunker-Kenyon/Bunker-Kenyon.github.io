@@ -2,8 +2,9 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(music.jpg);
-    background-repeat:repeat-y;
+    background-image: url(stargate.png);
+    background-repeat:repeat-n;
+	background-position: center;
     color: black;
 }
 span{
