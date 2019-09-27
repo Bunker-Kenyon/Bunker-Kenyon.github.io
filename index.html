@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="styleGuide.css">
+        <title>Bunker Music</title>
+        <script type="text/javascript" src="functions.js"></script>
+    </head>
+    <body onload="setDefaults()">
+        <!--Heading-->
+        <div>
+            <header class="header">
+                <img class="imgLogo" alt="BM Logo" src="notes.png" />
+                <h1>Bunker Music</h1>
+            </header>
+        </div>
+        <div>
+            <!--Nav Bar-->
+            <nav class="navbar">
+                <a href="../index.html">CS 213 Assignments</a>
+                <a href="piano.html">Piano</a>
+                <a href="organ.html">Organ</a>
+                <a href="voice.html">Voice</a>
+                <a href="guitar.html">Guitar</a>
+                <a href="organ.html">Lessons</a>
+            </nav>
+            <!--Shopping Cart-->
+            <h2 style="padding-left:30px">Shopping cart</h2>
+            <div class="col-container">
+                <div class="col left">
+                    <h3>Sheet Music</h3>
+                    <form action="" id="sheetmusic" onchange="addSheetMusic()">
+                        <table>
+                            <tr>
+                                <th>X</th>
+                                <th>Name</th>
+                                <th>Instrument(s)</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="peaceinchrist" value="2.5"></td>
+                                <td>Peace in Christ</td>
+                                <td>Solo Voice & Guitar</td>
+                                <td>$2.50</td>
+                                <td>A piece ment to be sung solo with an accoustic guitar. This piece is sung from the perspective of Christ.</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="youneededme-dreaming" value="2.5"></td>
+                                <td>You Needed Me / Dreaming Medley</td>
+                                <td>Solo Piano</td>
+                                <td>$2.50</td>
+                                <td>A piano medley of the love songs "You Needed Me" and "Dreaming".</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="hishands" value="3.5"></td>
+                                <td>His Hands</td>
+                                <td>Duet Voice(SB) & Piano</td>
+                                <td>$3.50</td>
+                                <td>A duet arrangment to be sung by a seprano and bass, accompanied by a piano. A song about the hands of Christ</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ohmyfather" value="3.5"></td>
+                                <td>Oh, My Father</td>
+                                <td>Duet Voice(BB) & Piano</td>
+                                <td>$3.50</td>
+                                <td>A duet arrgment of the popular hymn. To be sung by 2 basses. The harmony part weaves up, down and around the melody.</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="moreholinessgiveme" value="3.5"></td>
+                                <td>More Holiness Give Me</td>
+                                <td>Duet Piano & Organ</td>
+                                <td>$2.50</td>
+                                <td>A piano / organ duet of the popular hymn.</td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+                <div class="col right">
+                    <h3>Lessons</h3>
+                    <form action="" id="lessons">
+                        <select id="instrament" onchange="addLessons()">
+                            <option value="default">Select Instrament</option>
+                            <option value="piano">Piano</option>
+                            <option value="organ">Organ</option>
+                            <option value="voice">Voice</option>
+                            <option value="guitar">Guitar</option>
+                            
+                        </select>
+                        <span id ="instramenterror" style="color:red; visibility: hidden">Please choose instrument</span><br>
+
+                        <select id="lessonduration" onchange="addLessons()">
+                            <option value="0">Select duration</option>
+                            <option value="3">3 Months</option>
+                            <option value="6">6 Months</option>
+                            <option value="9">9 Months</option>
+                            <option value="12">12 Months</option>
+
+                        </select>
+                        <span id="durationerror"style="color:red; visibility: hidden">Please choose lesson duration</span><br>
+                        <label>Lesson Price:</label>
+                        <p class="dollars" id="lessonprice" value="0">$0.00</p><br>
+                        <label>Music Price:</label>
+                        <p class="dollars" id="musicprice" value ="0">$0.00</p>
+
+                    </form>
+
+                </div>
+
+            </div>
+            <!--Customer Info-->
+            <div class="col-container">
+                <div class="col left">
+                    <h2>Customer Information</h2>
+                    <form action="" id="custinfo">
+                        <div style="float:left;">
+                            <label>First Name</label><br>
+                            <input type="email" id="fname" onblur="checkFirstName()"><br>
+                            <span id="fnerror" style="color:red; visibility: hidden">Incorrect Input.</span><br>
+                        </div>
+                        <div style="float:left;">
+                            <label>Last Name</label><br>
+                            <input type="text" id="lname" onblur="checkLastName()"><br>
+                            <span id="lnerror" style="color:red; visibility: hidden">Incorrect Input.</span><br>
+                        </div>
+
+                        <br style="clear:both;" />
+                        <div style="float:left;">
+                            <label>Phone #</label><br>
+                            <input type="text" id="phone" maxlength="13" onblur="checkPhone()"><br>
+                            <span id="phoneerror" style="color:red; visibility: hidden">Incorrect # format try xxx-xxx-xxxx.</span><br>
+                        </div>
+                        
+                        <div style="float:left;">
+                            <label>Email</label><br>
+                            <input type ="text" id="email" onblur="checkEmail()"><br>
+                            <span id="emailerror" style="color:red; visibility: hidden">Incorrect email format.</span><br>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="col right">
+                    <h2>Shipping</h2>
+                    <form action="" id="shippinginfo" oninput="">
+                        <div style="float:left; ">
+                            <label>Street Address</label><br>
+                            <input type="text" id="address" onblur="checkAddress()"/><br>
+                            <span id="addresserror" style="color:red; visibility: hidden">Incorrect address format.</span><br>
+                        </div>
+                        <div style="float:left; ">
+                            <label>Apt# (optional)</label><br>
+                            <input type="text" id="apt" onblur="checkApt()" /><br>
+                            <span id="apterror" style="color:red; visibility: hidden">Apt must contain numbers.</span><br>
+                        </div>
+
+                        <br style="clear:both;" />
+
+                        <div style="float:left; ">
+                            <label>City</label><br>
+                            <input type="text" id="city" onblur="checkCity()"/><br>
+                            <span id="cityerror" style="color:red; visibility: hidden">Incorrect city input.</span><br>
+                        </div>
+                        <div style="float:left;">
+                            <label>State</label><br>
+                            <input type="text" id="state" maxlength="2" onblur="checkState()"/><br>
+                            <span id="stateerror" style="color:red; visibility: hidden">Incorrect State input.</span><br>
+                        </div>
+                        <div style="float:left;">
+                            <label>Zip Code</label><br>
+                            <input type="text" id="zip" maxlength="5" onblur="checkZip()"/><br>
+                            <span id="ziperror" style="color:red; visibility: hidden">Incorrect format.</span><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <!--Payment Info-->
+            <div class="col-container">
+                <div class="col left">
+                    <h2>Payment Info</h2>
+                    <form action="" id="payment" oninput="">
+                        <div style="float:left;">
+                            <label>Card Network</label><br>
+                            <select id="cardnetwork" onchange="checkCardNetwork()">
+                                <option value="default">Select Card Network</option>
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">MasterCard</option>
+                                <option value="discover">Discover</option>
+                                <option value="americanexpress">American Express</option>
+                            </select><br>
+                            <span id="cnerror" style="color:red; visibility: hidden">Please make a selection.</span><br>
+                        </div>
+                        <div style="float:left;">
+                            <label>Card #</label><br>
+                            <input type="text" id="cardnum" maxlength="16" onblur="checkCardNum()"/><br>
+                            <span id="cnumerror" style="color:red; visibility: hidden">input card number, no dashes.</span><br>
+                        </div>
+                        <br style="clear:both;" />
+                        <div style="float:left;">
+                            <label>Exp. Date (mm/yy)</label><br>
+                            <input type="text" id="expdate" maxlength="5" oninput="checkExpDate()"/><br>
+                            <span id="expdateerror" style="color:red; visibility: hidden">incorrect date, mm/yy.</span><br>
+                        </div>
+                        <div style="float:left;">
+                            <label>Security Code</label><br>
+                            <input id="seccode" maxlength="3" oninput="checkSecCode()"/><br>
+                            <span id="scerror" style="color:red; visibility: hidden">incorrect code format, 3 numbers.</span><br>
+                        </div>
+                    </form>
+                    <br style="clear:both;" />
+                    <br style="clear:both;" />
+                </div>
+
+                <!--Totals-->
+                <div class="col left">
+                    <h2>Totals</h2>
+                    <form action="" id="totals">
+                        <div style="float:left;">
+                            <label>Subtotal:</label>
+                            <p class="dollars" value="0" id="subtotal">$0.00</p>
+                        </div>
+
+                        <div style="float:left;">
+                            <label>Shipping:</label>
+                            <p class="dollars" value="0" id="shippingcost">$0.00</p>
+                        </div>
+                        <div style="float:left;">
+                            <label>Taxes:</label>
+                            <p class="dollars" value="0" id="taxes">$0.00</p>
+                        </div>
+
+                        <div style="float:left;">
+                            <label>Total:</label>
+                            <p class="dollars" value="0" id="total">$0.00</p>
+                        </div>
+                        <br style="clear:both;" />
+                        <div>
+                            <div style="float:left;">
+                                <label>Submit Order:</label>
+                                <input type="submit" onclick="submitForms()" />
+                                <span id="subnotice" style="color:red; visibility: hidden">Submitted.</span><br>
+                            </div>
+
+                            <div style="float:left;">
+                                <label>Reset Form:</label>
+                                <input type="reset" onclick="resetForms()" />
+                                <span id="resnotice" style="color:red; visibility: hidden">Forms has been reset.</span><br>
+                            </div>
+                        </div>
+                        
+                        <br style="clear:both;" />
+                    </form>
+                    
+
+                </div>
+                <br style="clear:both;" />
+
+            </div>
+        </div>
+        <div>
+            <!--Footer-->
+            <nav>
+                <p id="credits">
+                    This site is dedicated to my father, Eric. May he forever rest in the peace of Chirst. All the music on this site was written or arranged by him.
+                </p>
+            </nav>
+            <div class="navbar">
+                <nav class="navbar">
+                    <a href="../index.html">CS 213 Assignments</a>
+                    <a href="account.html">My Account</a>
+                    <a href="about.html">About Bunker Music</a>
+                    <a href="music.html">Browse for Music</a>
+                </nav>
+            </div>
+        </div>
+</body>
+</html>
