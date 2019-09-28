@@ -1,7 +1,7 @@
 
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Comic Sans MS", cursive, sans-serif;
     background-image: url(stargate.png);
     background-repeat:repeat-n;
 	background-position: center;
@@ -14,13 +14,16 @@ span{
 /* Style the header */
 .header {
     text-align: left;
-    font-size: 30px;
-    color: black;
-    font-family: 'Harlow Solid'
+    font-size: 20px;
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: darkgray;
+    padding: 1px 16px;
 }
 .imgLogo {
     float: right;
 }
+
 
 
 /* Create two unequal columns that floats next to each other*/
@@ -43,6 +46,14 @@ span{
 .right {
     width: 50%;
     padding: 10px;
+}
+
+/*Sections*/
+.section {
+    display: table;
+    width: 100%;
+    background: lightblue;
+    padding: 4px;
 }
 
 
@@ -158,3 +169,18 @@ label{
     font-size: 16px;
     color: black;
 }
+
+pre, code {
+    font-family: monospace, monospace;
+    background-color: lightgrey;
+}
+
+pre {
+    overflow: auto;
+
+}
+
+    pre > code {
+        display: block;
+        word-wrap: normal;
+    }
