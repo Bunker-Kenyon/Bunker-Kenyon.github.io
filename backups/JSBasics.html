@@ -1,0 +1,396 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styleGuide.css">
+    <title>JavaScript Basics</title>
+    <script type="text/javascript" src="functions.js"></script>
+</head>
+<body onload="setDefaults()">
+    <!--Heading-->
+    <div>
+        <header class="header">
+            <h1>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</h1>
+        </header>
+    </div>
+    <div>
+        <!--Nav Bar-->
+        <nav class="navbar">
+            <a href="index.html">CS 261 Topics</a>
+            <a href="JSBasics.html">Loops, Statements, Arrays, etc</a>
+            <a href="JSObjectsEtc.html">Object Creation Functions, Inheritance, etc</a>
+            <a href="JSONParse.html">JSON Parse, Stringify</a>
+            <a href="JSONWeb.html">XMLHTTPRequest & JSON Web Service</a>
+            <a href="LocalStorage.html">Local Storage</a>
+            <a href="DOM.html">DOM Manipulation</a>
+            <a href="CSSwJavaScript.html">CSS Manipulation with JavaScript</a>
+            <a href="CSSTandA.html">CSS3 Transitions and Animations</a>
+            <a href="JSEvents.html">Standard JavaScript Events</a>
+            <a href="HTML5Tags.html">HTML5 Tags</a>
+            <a href="CSSTransitions.html">CSS3 Transitions without Custom Libraries</a>
+            <a href="CSSTransforms.html">CSS3 Transforms without Custom Libraries</a>
+            <a href="CSSAnimations.html">CSS3 Animations without Custom Libraries</a>
+        </nav>
+
+        <!--Footer-->
+    </div>
+    <!--Basics Intro-->
+    <div class="section">
+        <h2>JavaScript Basics Intro</h2>
+        <p>JavaScript is a programming language of HTML and the Web.</p>
+        <p>As defined by https://techterms.com, "JavaScript is a programming language commonly used in web development. 
+            It was originally developed by Netscape as a means to add dynamic and interactive elements to websites."</p>
+        <h3>Basic Example</h3>
+        <button class="button"
+                onclick="document.getElementById('demoTime').innerHTML = Date()">
+            Display Date and Time.
+        </button>
+
+        <p id="demoTime"></p>
+    </div>
+    <div class="section">
+        <h2>Variables:</h2>
+        <p>Variables in JavaScrypt are typeless.<br />
+            The are declared using "var" keyword</p>
+            <figure>
+                <figcaption>In this example, x, y, and z are variables.</figcaption>
+                <pre>
+                    <code>
+    var x = 5;
+    var y = 6;
+    var z = x + y;
+                    </code>
+                </pre>
+            </figure>
+            
+        <p>Output:</p>
+        <p id="demoV"></p>
+
+        <script>
+            var x = 5;
+            var y = 6;
+            var z = x + y;
+            document.getElementById("demoV").innerHTML =
+                "The value of z is: " + z;
+        </script>
+    </div>
+    <div class="section">
+        <h2>Functions and Parameters:</h2>
+        <figure>
+            <figcaption>This example calls a function with parameters which performs a calculation, and returns the result:.</figcaption>
+            <pre>
+                <code>
+    function myFunction(p1, p2) {
+        return p1 * p2;
+    }
+
+    document.getElementById("demoFP").innerHTML = myFunction(5, 6);
+                </code>
+            </pre>
+        </figure>
+
+        <p>Output: </p>
+        <p id="demoFP"></p>
+
+        <script>
+            function myFunction(p1, p2) {
+                return p1 * p2;
+            }
+            document.getElementById("demoFP").innerHTML = myFunction(5, 6);
+        </script>
+    </div>
+    <div class="section">
+        <h2>Loops:</h2>
+        <h3>For Loops:</h3>
+        <figure>
+            <figcaption>For Loop Example:</figcaption>
+            <pre>
+            <code>
+    var stargateMoviesTV = ["Stargate", "The Ark of Truth", "Continuum", "SG-1", "Atlantis", "Universe", "Origins", "Infinity"];
+    var text = "";
+    var i;
+    for (i = 0; i < stargateMoviesTV.length; i++) {
+        text += stargateMoviesTV[i] + "<br>";
+    }
+    document.getElementById("demoForLoop").innerHTML = text;
+                    </code>
+                </pre>
+        </figure>
+        <p>Output:</p>
+        <p id="demoForLoop"></p>
+
+        <script>
+            var stargateMoviesTV = ["Stargate", "The Ark of Truth", "Continuum", "SG-1", "Atlantis", "Universe", "Origins", "Infinity"];
+            var text = "";
+            var i;
+            for (i = 0; i < stargateMoviesTV.length; i++) {
+                text += stargateMoviesTV[i] + "<br>";
+            }
+            document.getElementById("demoForLoop").innerHTML = text;
+        </script>
+
+        <h3>While Loops</h3>
+        <figure>
+            <figcaption>Your code title</figcaption>
+            <pre>
+            <code>
+    var text = "";
+    var i = 0;
+    var x = 2;
+    while (i < 10) {
+    text += "The number is " + x;
+        i++;
+        x = x * 2;
+    }
+    document.getElementById("demoWhileLoop").innerHTML = text;
+                    </code>
+                </pre>
+        </figure>
+
+        <p>Output:</p>
+        <p id="demoWhileLoop"></p>
+
+        <script>
+            var text = "";
+            var i = 0;
+            var x = 2;
+            while (i < 10) {
+                text += "<br>The number is " + x;
+                i++;
+                x = x * 2;
+            }
+            document.getElementById("demoWhileLoop").innerHTML = text;
+        </script>
+
+        <h3>Do/While Loop</h3>
+        <p> Do/While loops always run at least once.</p>
+
+        <figure>
+            <figcaption>Your code title</figcaption>
+                <pre>
+                    <code>
+    var text = ""
+    var i = 0;
+    var x = 2;
+
+    do {
+        text += "The number is " + x;
+        i++;
+        x = x * 2;
+    }
+    while (i < 10);
+
+    document.getElementById("demoDoWhileLoop").innerHTML = text;
+                    </code>
+                </pre>
+        </figure>
+        <p id="demoDoWhileLoop"></p>
+            
+        <script>
+            var text = ""
+            var i = 0;
+            var x = 2;
+
+            do {
+                text += "<br>The number is " + x;
+                i++;
+                x = x * 2;
+            }
+            while (i < 10);
+
+            document.getElementById("demoDoWhileLoop").innerHTML = text;
+        </script>
+
+    </div>
+    <div class="section">
+        <h2>Conditional Statements:</h2>
+        <h3>If/Else</h3>
+
+        <figure>
+            <figcaption>If/Else Example Code</figcaption>
+            <pre>
+            <code>
+    function myFunction() {
+        var time = new Date().getHours();
+        if (time < 12) {
+            document.getElementById("demoElseIf").innerHTML = "Good Morning";
+        }
+        else if (time < 17) {
+            document.getElementById("demoElseIf").innerHTML = "Good Afternoon";
+        }
+        else if (time < 21) {
+            document.getElementById("demoElseIf").innerHTML = "Good Evening";
+        }
+        else {
+            document.getElementById("demoElseIf").innerHTML = "Good Night";
+        }
+    }
+                    </code>
+                </pre>
+        </figure>
+        <p>Click the button to display a greeting based on the time of day.</p>
+
+        <button onclick="myFunction()">Say Greeting</button>
+
+        <p id="demoElseIf"></p>
+
+        <script>
+            function myFunction() {
+                var time = new Date().getHours();
+                if (time < 12) {
+                    document.getElementById("demoElseIf").innerHTML = "Good Morning";
+                }
+                else if (time < 17) {
+                    document.getElementById("demoElseIf").innerHTML = "Good Afternoon";
+                }
+                else if (time < 21) {
+                    document.getElementById("demoElseIf").innerHTML = "Good Evening";
+                }
+                else {
+                    document.getElementById("demoElseIf").innerHTML = "Good Night";
+                }
+            }
+        </script>
+
+        <h3>Switch</h3>
+        <p>What is your favorite Star Wars Movie?</p>
+        <p>Write 1, 2, 3, 4, 5, 6, 7, 8, Solo, Rouge One.</p>
+        <p>The switch statement will execute a block of code based on the users input.</p>
+
+        <input id="myInput" type="text">
+
+        <button onclick="myFunction()">Try it</button>
+
+        <figure>
+            <figcaption>Switch Example</figcaption>
+                <pre>
+                    <code>
+    function myFunction() {
+        var text;
+        var movie = document.getElementById("myInput").value;
+
+        switch (movie) {
+            case "1":
+                text = "The Phantom Menace all the way!";
+                break;
+            case "2":
+                text = "Attack of the Clones was awesome!.";
+                break;
+            case "3":
+                text = "I was your brother, Anakin!!! So sad...";
+                break;
+            case "4":
+                text = "Luke is the new hope.";
+                break
+            case "5":
+                text = "No, I am your father.";
+                break
+            case "6":
+                text = "Anakin is the Jedi who returned.";
+                break
+            case "7":
+                text = "Rey awakens in the force.";
+                break
+            case "8":
+                text = "Luke is the last Jedi";
+                break
+            case "Solo":
+                text = "I just did the Kessel Run in twelve parsecs.";
+                break
+            case "Rouge One":
+                text = "Rebellions Are Built On Hope.";
+                break
+            default:
+                text = "I can't wait for Rise of Skywalker!";
+        }
+        document.getElementById("demoSwitch").innerHTML = text;
+    }
+                    </code>
+                </pre>
+        </figure>
+
+        <p id="demoSwitch"></p>
+
+        <script>
+            function myFunction() {
+                var text;
+                var movie = document.getElementById("myInput").value;
+
+                switch (movie) {
+                    case "1":
+                        text = "The Phantom Menace all the way!";
+                        break;
+                    case "2":
+                        text = "Attack of the Clones was awesome!.";
+                        break;
+                    case "3":
+                        text = "I was your brother, Anakin!!! So sad...";
+                        break;
+                    case "4":
+                        text = "Luke is the new hope.";
+                        break
+                    case "5":
+                        text = "No, I am your father.";
+                        break
+                    case "6":
+                        text = "Anakin is the Jedi who returned.";
+                        break
+                    case "7":
+                        text = "Rey awakens in the force.";
+                        break
+                    case "8":
+                        text = "Luke is the last Jedi";
+                        break
+                    case "Solo":
+                        text = "I just did the Kessel Run in twelve parsecs.";
+                        break
+                    case "Rouge One":
+                        text = "Rebellions Are Built On Hope.";
+                        break
+                    default:
+                        text = "I can't wait for Rise of Skywalker!";
+                }
+                document.getElementById("demoSwitch").innerHTML = text;
+            }
+        </script>
+
+    </div>
+
+    <div class="section">
+        <h2>Arrays:</h2>
+        <p>The Array object is used to store multiple values in a single variable:</p>
+
+        <figure>
+            <figcaption>Your code title</figcaption>
+                <pre>
+                    <code>
+    var starTrekShows = ["The Original Series", "The Next Generation", "Voyager", "Deep Space Nine", "Enterprise", "Discovery", "Picard", "Animated Series"];
+    document.getElementById("demoArrays").innerHTML = starTrekShows;
+                    </code>
+                </pre>
+        </figure>
+
+        <p></p>Star Trek TV Shows: </p>
+
+        <p id="demoArrays"></p>
+
+        <script>
+            var starTrekShows = ["The Original Series", "The Next Generation", "Voyager", "Deep Space Nine", "Enterprise", "Discovery", "Picard", "Animated Series"];
+            document.getElementById("demoArrays").innerHTML = starTrekShows;
+        </script>
+    </div>
+    <div class="section">
+        <h2>AssociativeArrays:</h2>
+        <p>
+            According to w3schools.com, "Many programming languages support arrays with named indexes.
+
+            Arrays with named indexes are called associative arrays (or hashes).
+
+            JavaScript does not support arrays with named indexes.
+
+            In JavaScript, arrays always use numbered indexes".
+        </p>
+    </div>
+
+</body>
+</html>

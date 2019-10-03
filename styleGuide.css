@@ -54,6 +54,7 @@ span{
     width: 100%;
     background: lightblue;
     padding: 4px;
+    margin-left: inherit;
 }
 
 
@@ -170,6 +171,15 @@ label{
     color: black;
 }
 
+.button {
+    width: 40%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    background-color:cornflowerblue;
+}
+
 pre, code {
     font-family: monospace, monospace;
     background-color: lightgrey;
@@ -184,3 +194,5 @@ pre {
         display: block;
         word-wrap: normal;
     }
+
+
