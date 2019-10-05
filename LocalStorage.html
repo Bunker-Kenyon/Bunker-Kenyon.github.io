@@ -60,8 +60,27 @@
                 document.getElementById("demoLocalStorageArray").innerHTML = displayText;
             </script>
         </div>
+
+        <!--Storing Objects-->
         <div class="section">
             <h3>Storing Objects</h3>
+            <h4>Team Member: </h4>
+            <label>First: </label><br />
+            <input class="input" id="first" /><br />
+            <label>Last: </label><br />
+            <input class="input" id="last" /><br />
+            <label>Age: </label><br />
+            <input class="input" id="age" /><br />
+            <label>Gender: </label><br />
+            <input class="input" id="gender" /><br />
+            <label>Rank: </label><br />
+            <input class="input" id="rank" /><br />
+            <label>Role: </label><br />
+            <input class="input" id="role" /><br />
+            <label>Id</label><br />
+            <input class="input" id="id" /><br />
+            <button class="button" onclick="myStorageFunc()">Send and pull from storage</button>
+
             <p id="demoLocalStorageObj"></p>
             <script>
                 //Define a person
@@ -80,46 +99,56 @@
                 };
 
                 //Define a SGTeamMember inheriting person
-                function SGTeamMember(first, last, age, gender, rank, role, id, x) {
+                function SGTeamMember(first, last, age, gender, rank, role, id, greetingText) {
                     Person.call(this, first, last, age, gender);
 
                     this.rank = rank;
                     this.role = role;
                     this.id = id;
-                    this.x = x;
+                    this.greetingText = greetingText;
                 }
 
                 //This is the inheritance part
-                SGTeamMember.prototype = Object.create(Person.prototype);
-                Object.defineProperty(SGTeamMember.prototype, 'constructor', {
-                    value: SGTeamMember,
-                    enumerable: false,
-                    writable: true
-                });
+                function myStorageFunc() {
+                    SGTeamMember.prototype = Object.create(Person.prototype);
+                    Object.defineProperty(SGTeamMember.prototype, 'constructor', {
+                        value: SGTeamMember,
+                        enumerable: false,
+                        writable: true
+                    });
 
-                //Adding a SGTeamMember greating
-                SGTeamMember.prototype.greeting = function () {
-                    return "Hi. My name is " + this.rank + " " + this.name.first + " "
-                        + this.name.last + ". I am the " + this.role + " of this team.";
-                };
+                    //Adding a SGTeamMember greeting
+                    SGTeamMember.prototype.greeting = function () {
+                        return "Hi. My name is " + this.rank + " " + this.name.first + " "
+                            + this.name.last + ". I am the " + this.role + " of this team.";
+                    };
 
-                //Instantiate the SGTeamMember object
-                var teamMember = new SGTeamMember('Jack', 'Oniell', 31, 'male', 'Colonel', 'Team Leader', 1234);
+                    //Instantiate the SGTeamMember object
+                    var teamMember = new SGTeamMember(document.getElementById("first").value,
+                        document.getElementById("last").value,
+                        document.getElementById("age").value,
+                        document.getElementById("gender").value,
+                        document.getElementById("rank").value,
+                        document.getElementById("role").value,
+                        document.getElementById("id").value);
 
-                //Store the data
-                localStorage.setItem("teammember", JSON.stringify(teamMember));
+                    teamMember.greetingText = teamMember.greeting();
 
-                // retrieving the data and converting it back into an object
-                var retrievedData = localStorage.getItem("teammember");
-                var teamMember2 = JSON.parse(retrievedData);
-                console.log("teamMember2: " + teamMember2);
+                    //Store the data
+                    localStorage.setItem("teammember", JSON.stringify(teamMember));
+
+                    // retrieving the data and converting it back into an object
+                    var retrievedData = localStorage.getItem("teammember");
+                    var teamMember2 = JSON.parse(retrievedData);
 
 
-                //Display
-                document.getElementById("demoLocalStorageObj").innerHTML = "Hi. My name is " + teamMember2.rank + " " + teamMember2.name.first + " "
-                    + teamMember2.name.last + ". I am the " + teamMember2.role + " of this team.";
+                    //Display
+                    document.getElementById("demoLocalStorageObj").innerHTML = teamMember2.greetingText;
+                }
+                
             </script>
-            <p>It is interesting to note that my prototype greeting does not work but all member variables work in the object after coming from storage</p>
+            <p>It is interesting to note that my greeting function does not work but all member variables work in the object after coming from storage. 
+                   However, there are ways to still get the data out of the function into storage and back out again.</p>
         </div>
         <div class="section">
             <h2>Session Storage </h2>
@@ -148,7 +177,7 @@
                 //Display
                 document.getElementById("demoSessionStorageArray").innerHTML = displayText;
             </script>
-            <p>Because I used sessionStorage, the data for teamMember2 will be lost after I close the tab.</p>
+            <p>Because I used sessionStorage, the data for food will be lost after I close the tab.</p>
         </div>
 
 
