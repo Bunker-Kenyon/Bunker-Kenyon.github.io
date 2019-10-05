@@ -34,192 +34,28 @@
 
         <div class="section">
             <h2>Object Creation Functions</h2>
-            <h3>Constructor Function with Properties, Methods and Instantiation</h3>
-            <figure>
-                <figcaption>Constructor Function Example</figcaption>
-                <pre>
-                <code>
-    // Constructor function for SGTeamMember objects
-    function SGTeamMember(name, rank, role) {
-        this.name = name;
-        this.rank = rank;
-        this.role = role;
-    }
+            <h3>Constructor Function with Properties, Methods, Inheritance, Prototypes and Instantiation</h3>
+            <h3>Storing Objects</h3>
+            <h4>Team Member: </h4>
+            <label>First: </label><br />
+            <input class="input" id="first" /><br />
+            <label>Last: </label><br />
+            <input class="input" id="last" /><br />
+            <label>Age: </label><br />
+            <input class="input" id="age" /><br />
+            <label>Gender: </label><br />
+            <input class="input" id="gender" /><br />
+            <label>Rank: </label><br />
+            <input class="input" id="rank" /><br />
+            <label>Role: </label><br />
+            <input class="input" id="role" /><br />
+            <label>Id</label><br />
+            <input class="input" id="id" /><br />
+            <button class="button" onclick="createTeamMember()">Create Team Member</button><br />
 
-    // Create a SGTeamMember object
-    var teamMember = new SGTeamMember("Jack Oniell", "Colonel", "Team Leader");
+            <label>Output:</label><br />
 
-    teamMember.greeting = function () {
-        return "Hi. My name is " + this.rank + " " + this.name 
-                + ". I am the " + this.role + " of this team.";
-    };
-
-    // Display rank and name
-    document.getElementById("demoObjCreation").innerHTML = teamMember.greeting();
-                        </code>
-                    </pre>
-            </figure>
-            <p>Output:</p>
-            <p id="demoObjCreation"></p>
-
-            <script>
-                // Constructor function for SGTeamMember objects
-                function SGTeamMember(name, rank, role) {
-                    this.name = name;
-                    this.rank = rank;
-                    this.role = role;
-                }
-
-                // Create a SGTeamMember object
-                var teamMember = new SGTeamMember("Jack Oniell", "Colonel", "Team Leader");
-
-                teamMember.greeting = function () {
-                    return "Hi. My name is " + this.rank + " " + this.name + ". I am the " + this.role + " of this team.";
-                };
-
-                // Display rank and name
-                document.getElementById("demoObjCreation").innerHTML = teamMember.greeting();
-            </script>
-            <h3>Prototypes</h3>
-
-            <figure>
-                <figcaption>Prototype Example</figcaption>
-                    <pre>
-                        <code>
-    function SGTeamMember(name, rank, role) {
-        this.name = name;
-        this.rank = rank;
-        this.role = role;
-    }
-
-    SGTeamMember.prototype.id = "1432";
-    var teamMember = new SGTeamMember("Jack Oniell", "Colonel", "Team Leader");
-    document.getElementById("demoObjCreationProto").innerHTML =
-        "SG-1's team leader is " + teamMember.rank + " " 
-                + teamMember.name + ", Service ID: " + teamMember.id;
-                        </code>
-                    </pre>
-            </figure>
-
-            <p>Output</p>
-            <p id="demoObjCreationProto"></p>
-            <script>
-                function SGTeamMember(name, rank, role) {
-                    this.name = name;
-                    this.rank = rank;
-                    this.role = role;
-                }
-
-                SGTeamMember.prototype.id = "1432";
-                var teamMember = new SGTeamMember("Jack Oniell", "Colonel", "Team Leader");
-                document.getElementById("demoObjCreationProto").innerHTML =
-                    "SG-1's team leader is " + teamMember.rank + " " + teamMember.name + ", Service ID: " + teamMember.id;
-
-            </script>
-        </div>
-        <div class="section">
-            <h2>Inheritance</h2>
-
-            <figure>
-                <figcaption>Inheritance Example Code</figcaption>
-                    <pre>
-                        <code>
-    //Define a person
-    function Person(first, last, age, gender) {
-        this.name = {
-            first,
-            last
-        };
-        this.age = age;
-        this.gender = gender;
-    };
-
-    //Add a greeting to the person object
-    Person.prototype.greeting = function () {
-        alert('Hi! I\'m ' + this.name.first + '.');
-    };
-
-    //Define a SGTeamMember inheriting person
-    function SGTeamMember(first, last, age, gender, rank, role, id) {
-        Person.call(this, first, last, age, gender);
-
-        this.rank = rank;
-        this.role = role;
-        this.id = id;
-    }
-
-    //This is the inheritance part
-    SGTeamMember.prototype = Object.create(Person.prototype);
-    Object.defineProperty(SGTeamMember.prototype, 'constructor', {
-        value: SGTeamMember,
-        enumerable: false,
-        writable: true
-    });
-
-    //Adding a SGTeamMember greating
-    SGTeamMember.prototype.greeting = function () {
-        return "Hi. My name is " + this.rank + " " + this.name.first + " " 
-                + this.name.last + ". I am the " + this.role + " of this team.";
-    };
-
-    //Instantiate the SGTeamMember object
-    var teamMember = new SGTeamMember('Jack', 'Oniell', 31, 'male', 'Colonel', 'Team Leader', 1234);
-
-    //display it
-    document.getElementById("demoObjCreationInherit").innerHTML = teamMember.greeting();
-
-                        </code>
-                    </pre>
-            </figure>
-            <p>Output:</p>
-            <p id="demoObjCreationInherit"></p>
-            <script>
-
-                //Define a person
-                function Person(first, last, age, gender) {
-                    this.name = {
-                        first,
-                        last
-                    };
-                    this.age = age;
-                    this.gender = gender;
-                };
-
-                //Add a greeting to the person object
-                Person.prototype.greeting = function () {
-                    alert('Hi! I\'m ' + this.name.first + '.');
-                };
-
-                //Define a SGTeamMember inheriting person
-                function SGTeamMember(first, last, age, gender, rank, role, id) {
-                    Person.call(this, first, last, age, gender);
-
-                    this.rank = rank;
-                    this.role = role;
-                    this.id = id;
-                }
-
-                //This is the inheritance part
-                SGTeamMember.prototype = Object.create(Person.prototype);
-                Object.defineProperty(SGTeamMember.prototype, 'constructor', {
-                    value: SGTeamMember,
-                    enumerable: false,
-                    writable: true
-                });
-
-                //Adding a SGTeamMember greating
-                SGTeamMember.prototype.greeting = function () {
-                    return "Hi. My name is " + this.rank + " " + this.name.first + " "
-                        + this.name.last + ". I am the " + this.role + " of this team.";
-                };
-
-                //Instantiate the SGTeamMember object
-                var teamMember = new SGTeamMember('Jack', 'Oniell', 31, 'male', 'Colonel', 'Team Leader', 1234);
-
-                //display it
-                document.getElementById("demoObjCreationInherit").innerHTML = teamMember.greeting();
-            </script>
-
+            <p class="output" id="OutputObjCreation"></p>
         </div>
     </div>
 

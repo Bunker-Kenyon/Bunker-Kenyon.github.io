@@ -149,3 +149,55 @@ function pickMovie() {
 
     document.getElementById("switchOutput").innerHTML = text;
 }
+
+//Define a person
+function Person(first, last, age, gender) {
+    this.name = {
+        first,
+        last
+    };
+    this.age = age;
+    this.gender = gender;
+};
+
+//Add a greeting to the person object
+Person.prototype.greeting = function () {
+    alert('Hi! I\'m ' + this.name.first + '.');
+};
+
+//Define a SGTeamMember inheriting person and adding new items
+function SGTeamMember(first, last, age, gender, rank, role, id, greetingText) {
+    Person.call(this, first, last, age, gender);
+
+    this.rank = rank;
+    this.role = role;
+    this.id = id;
+}
+
+//This is the inheritance part
+function createTeamMember() {
+    SGTeamMember.prototype = Object.create(Person.prototype);
+    Object.defineProperty(SGTeamMember.prototype, 'constructor', {
+    value: SGTeamMember,
+    enumerable: false,
+    writable: true });
+
+    //Adding a SGTeamMember greeting
+    SGTeamMember.prototype.greeting = function () {
+        return "Hi. My name is " + this.rank + " " + this.name.first + " "
+        + this.name.last + ". I am the " + this.role + " of this team.";
+    };
+
+    //Instantiate the SGTeamMember object
+    var teamMember = new SGTeamMember(document.getElementById("first").value,
+        document.getElementById("last").value,
+        document.getElementById("age").value,
+        document.getElementById("gender").value,
+        document.getElementById("rank").value,
+        document.getElementById("role").value,
+        document.getElementById("id").value);
+
+    //Display
+    document.getElementById("OutputObjCreation").innerHTML = teamMember.greeting();
+
+}
