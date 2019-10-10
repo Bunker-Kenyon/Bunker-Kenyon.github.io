@@ -201,3 +201,54 @@ function createTeamMember() {
     document.getElementById("OutputObjCreation").innerHTML = teamMember.greeting();
 
 }
+
+function addTeamMember(teamMembers) {
+    this.teamMembers = teamMembers;
+
+    var teamMember = new SGTeamMember(document.getElementById("first").value,
+        document.getElementById("last").value,
+        document.getElementById("age").value,
+        document.getElementById("gender").value,
+        document.getElementById("rank").value,
+        document.getElementById("role").value,
+        document.getElementById("id").value);
+
+    teamMembers.push(teamMember);
+
+    //stringifys my array
+    var myJSON = JSON.stringify(teamMembers);
+
+    //display the JSON object
+    document.getElementById("OutputJSONParse").innerHTML = myJSON;
+
+    //Parse the JSON object into an array
+    var team = JSON.parse(myJSON);
+
+    //Display select elements from the array
+    document.getElementById("OutputJSONParse2").innerHTML = team[0].rank + " " + team[0].name.first + " " + team[0].name.last;
+}
+
+function getKey() {
+    var apiID = "3c1f0026935cf8c5b2695f49e552d817";
+    return apiID;
+}
+function getWeather(key) {
+    this.key = key;
+
+    var weatherURL = "http://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&APPID=" +
+        key;
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var weather = JSON.parse(this.responseText);
+            document.getElementById("OutputJSONWeb").innerHTML = "City: " + weather.name + "<br>" + "Tempurature: " + weather.main.temp + "f";
+            console.log(weather);
+           
+        }
+    };
+    xmlhttp.open("GET", weatherURL, true);
+    xmlhttp.send();
+
+
+}

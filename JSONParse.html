@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -32,7 +32,37 @@
             <a href="CSSAnimations.html">CSS3 Animations without Custom Libraries</a>
         </nav>
 
-        <!--Footer-->
+        <div class="section">
+            <script>
+                var teamMembers = [];
+            </script>
+
+            <h2>Json Parse and Stringify</h2>
+            <h4>Team Member: </h4>
+            <label>First: </label><br />
+            <input class="input" id="first" /><br />
+            <label>Last: </label><br />
+            <input class="input" id="last" /><br />
+            <label>Age: </label><br />
+            <input class="input" id="age" /><br />
+            <label>Gender: </label><br />
+            <input class="input" id="gender" /><br />
+            <label>Rank: </label><br />
+            <input class="input" id="rank" /><br />
+            <label>Role: </label><br />
+            <input class="input" id="role" /><br />
+            <label>Id</label><br />
+            <input class="input" id="id" /><br />
+            <button class="button" onclick="addTeamMember(teamMembers)">Add Team Member</button><br />
+
+            <label>JSON Object:</label><br />
+            <p class="output" id="OutputJSONParse"></p>
+
+            <label>Parsed JSON Object, First team memeber:</label>
+            <p class="output" id="OutputJSONParse2"></p>
+
+
+        </div>
     </div>
 
 </body>
