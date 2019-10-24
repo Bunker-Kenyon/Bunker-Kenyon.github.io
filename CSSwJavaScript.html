@@ -31,16 +31,33 @@
             <a href="CSSTransforms.html">CSS3 Transforms without Custom Libraries</a>
             <a href="CSSAnimations.html">CSS3 Animations without Custom Libraries</a>
         </nav>
-        
-        <button type="button"
-          onclick="document.getElementById('id1').style.color = 'red'">
-Click Me!</button>
+        <div class="section" id="div1">
+            <button class="button"
+          onclick="insertCSS()">Click Me!</button>
 
         <script>
           function insertCSS() {
+            appendFunction();
+            var allElements = document.querySelectorAll('p');
+            for (var i = 0; i < allElements.length; i++){
+                allElements[i].id = 'p' + i; 
+            }
+            document.getElementById('p0').style.color = 'tomtato';
+
 
           }
+
+          function appendFunction() {
+                    var para = document.createElement("p");
+                    var node = document.createTextNode("Baby JohnBob. I was added to the end of the family.");
+                    para.appendChild(node);
+                    var element = document.getElementById("div1");
+                    element.appendChild(para);
+                }
         </script>
+        </div>
+        
+        
     </div>
 
 </body>
