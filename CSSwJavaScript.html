@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -31,33 +31,73 @@
             <a href="CSSTransforms.html">CSS3 Transforms without Custom Libraries</a>
             <a href="CSSAnimations.html">CSS3 Animations without Custom Libraries</a>
         </nav>
+        <!--SImple CSS Manipulation-->
+        <div class="section">
+            <h2>Simple CSS Manipulation</h2>
+
+            <h3 id="id1">My Element</h3>
+            <button class="button" onclick="document.getElementById('id1').style.color = 'red'">Change Element</button>
+        </div>
         <div class="section" id="div1">
+            <!--Complex CSS Manipulation-->
+            <h2>Complex CSS Manipulation</h2>
             <button class="button"
-          onclick="insertCSS()">Click Me!</button>
+                    onclick="insertCSS()">
+                Add Element
+            </button>
 
-        <script>
-          function insertCSS() {
-            appendFunction();
-            var allElements = document.querySelectorAll('p');
-            for (var i = 0; i < allElements.length; i++){
-                allElements[i].id = 'p' + i; 
-            }
-            document.getElementById("p0").style.color = "blue";
+            <script>
+                var count = 0;
+                function insertCSS() {
+                    appendFunction();
 
+                    var colorArray = []
 
-          }
+                    var allElements = document.querySelectorAll('p');
+                    for (var i = 0; i < allElements.length; i++) {
+                        allElements[i].id = 'p' + i;
+                        document.getElementById("p" + i).style.color = getRandomColor();
+                    }
 
-          function appendFunction() {
+                }
+
+                function appendFunction() {
                     var para = document.createElement("p");
-                    var node = document.createTextNode("Baby JohnBob. I was added to the end of the family.");
+                    var node = document.createTextNode("Paragraph " + count);
                     para.appendChild(node);
                     var element = document.getElementById("div1");
                     element.appendChild(para);
+                    count++;
                 }
-        </script>
+
+                function getRandomColor() {
+                    var letters = '0123456789ABCDEF';
+                    var color = '#';
+                    for (var i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    return color;
+                }
+            </script>
         </div>
-        
-        
+        <!--CSS Manipualtion with external stylesheet-->
+        <div class="section">
+            <h2>CSS Manipualtion with external stylesheet</h2>
+            <button class="button" id="button3" onclick="changeButton()">Change Me</button>
+            <script>
+                function changeButton() {
+                    var button = document.getElementById("button3");
+                    if (button.style.backgroundColor == "cornflowerblue") {
+                        button.style.backgroundColor = "pink";
+                    }
+                    else {
+                        button.style.backgroundColor = "cornflowerblue";
+                    }
+                }
+            </script>
+        </div>
+
+
     </div>
 
 </body>
