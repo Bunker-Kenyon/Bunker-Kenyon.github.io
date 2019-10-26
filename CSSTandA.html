@@ -1,10 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styleGuide.css">
     <title>CSS3 Transitions and Animations</title>
-    <script type="text/javascript" src="functions.js"></script>
+    <script type="text/javascript" src="functions.js">
+       
+
+    </script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
 </head>
 <body onload="setDefaults()">
     <!--Heading-->
@@ -32,8 +41,58 @@
             <a href="CSSAnimations.html">CSS3 Animations without Custom Libraries</a>
         </nav>
 
-        <!--Footer-->
+        <div class="section">
+            <h2>Transitions</h2>
+            <div id="trans">
+                
+            </div>
+            
+        </div>
+        <div class="section">
+            <h3>Hover mouse over image</h3>
+            <div id="cf">
+
+                <img class="bottom" src="jesus1.jpg" style="width:500px; height:500px" />
+                <img class="top" src="jesus2.jpg" style="width:500px; height:500px" />
+            </div>
+        </div>
+        <div class="section">
+            <h2>Animations</h2>
+            <div class="anime">
+                <img class="top" src="stargate.png" align="middle" style="width:inherit; height:inherit" />
+            </div>
+        </div>
+        <div class="section">
+            <h2>Animations with in a table cell</h2>
+            <button class="button" onclick="makeTable()">Create Table</button>
+            <p></p>
+            <h3 id="instructions" style="visibility:hidden">Hover over the cells</h3>
+            <script>
+                function makeTable() {
+                    document.getElementById("instructions").style.visibility = "visible";
+                    var table = document.getElementById("base");
+                    for (var i = 0; i < 10; i++) {
+                        var row = document.createElement("tr");
+                        for (var j = 0; j < 10; j++) {
+                            var col = document.createElement("td");
+                            var img = document.createElement('img');
+                            img.src = "stargate.png";
+                            img.align = "middle";
+                            img.style = "width: 40px; height: 40px";
+                            col.appendChild(img);
+                            row.appendChild(col);
+                        }
+                        table.appendChild(row);
+                    }
+                    window.scrollTo(0, document.body.scrollHeight);
+                }
+            </script>
+            <table id="base"></table>
+        </div>
+        
     </div>
+    
+    
 
 </body>
 </html>
