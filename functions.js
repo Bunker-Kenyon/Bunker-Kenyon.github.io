@@ -271,3 +271,22 @@ function makeTable2() {
     }
     window.scrollTo(0, document.body.scrollHeight);
 }
+
+function makeTable3() {
+    document.getElementById("instructions").style.visibility = "visible";
+    var table = document.getElementById("base2");
+    for (var i = 0; i < 10; i++) {
+        var row = document.createElement("tr");
+        for (var j = 0; j < 10; j++) {
+            var col = document.createElement("td");
+            var img = document.createElement('img');
+            img.src = "stargate.png";
+            img.align = "middle";
+            img.style = "width: 40px; height: 40px";
+            col.appendChild(img);
+            row.appendChild(col);
+        }
+        table.appendChild(row);
+    }
+    window.scrollTo(0, document.body.scrollHeight);
+}
