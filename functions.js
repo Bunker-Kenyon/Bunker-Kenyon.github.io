@@ -281,3 +281,8 @@ function ontouchExample2() {
     var table2 = document.getElementById("base");
     table.style.backgroundColor = "blue";
 }
+
+function focusExample(el) {
+    el.style.background = "yellow";
+    el.value = "I received focus!"
+}
