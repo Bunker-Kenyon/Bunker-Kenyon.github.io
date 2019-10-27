@@ -32,11 +32,67 @@
             <a href="CSSAnimations.html">CSS3 Animations without Custom Libraries</a>
         </nav>
         <div class="section">
-            <section>
-                <article class="left">Test2</article>
-                <article class="right">Test3</article>
-            </section>
+            <p>Note: This page has audio.</p>
+            <h2>Video</h2>
+            <video width="420" height="340" controls>
+                <source src="mary.mp4" type="video/mp4" />
+
+            </video>
+        </div>
+        <div class="section">
+            <h2>Audio</h2>
+            <audio controls>
+                <source src="SleepAway.mp3" type="audio/mp3" />
+            </audio>
             
+        </div>
+        <div class="section">
+            <h2>Canvas</h2>
+            <p>My very crude USS Enterprise</p>
+            <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
+            <script>
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+
+                //Saucer
+                ctx.beginPath();
+                ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                //Engineering
+                ctx.beginPath();
+                ctx.rect(80, 50, 30, 100);
+                ctx.stroke();
+
+                //Left Naucel
+                ctx.beginPath();
+                ctx.rect(50, 90, 20, 80);
+                ctx.stroke();
+
+                //Right Naucel
+                ctx.beginPath();
+                ctx.rect(120, 90, 20, 80);
+                ctx.stroke();
+
+                //Left Strut
+                ctx.moveTo(70, 100);
+                ctx.lineTo(65, 70);
+                ctx.stroke();
+
+                ctx.moveTo(110, 120);
+                ctx.lineTo(120, 125);
+                ctx.stroke();
+
+                //Right Strut
+                ctx.moveTo(110, 100);
+                ctx.lineTo(120, 105);
+                ctx.stroke();
+
+                ctx.moveTo(110, 120);
+                ctx.lineTo(120, 125);
+                ctx.stroke();
+            </script>
         </div>
         
         
