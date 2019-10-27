@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>Standard JavaScript Events</title>
     <script type="text/javascript" src="functions.js"></script>
 </head>
-<body onload="setDefaults()">
+<body onload="makeTable2()">
     <!--Heading-->
     <div>
         <header class="header">
@@ -32,7 +32,17 @@
             <a href="CSSAnimations.html">CSS3 Animations without Custom Libraries</a>
         </nav>
 
-        <!--Footer-->
+        <div class="section">
+            <h2>onLoad</h2>
+            <p></p>
+            <h3 id="instructions" style="visibility:hidden">Hover over the cells</h3>
+            <table id="base"></table>
+        </div>
+    </div>
+    <div class="section">
+        <h2>onTouch</h2>
+        <h3 ontouchstart="makeTable2()">Touch Me!</h3>
+        <table id="base"></table>
     </div>
 
 </body>

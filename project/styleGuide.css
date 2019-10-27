@@ -1,0 +1,39 @@
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-image: url(stargate.png);
+    background-repeat: repeat-n;
+    background-position: center;
+    color: black;
+}
+
+/* Style the header */
+.header {
+    text-align: left;
+    font-size: 20px;
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: darkgray;
+    padding: 1px 16px;
+}
+
+/*nav bar*/
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the topnav links */
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
