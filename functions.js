@@ -279,5 +279,5 @@ function ontouchExample() {
 
 function ontouchExample2() {
     var table = document.getElementById("base");
-    table.style.backgroundColor = "red";
+    table.style.backgroundColor = "blue";
 }
