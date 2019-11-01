@@ -198,7 +198,7 @@ pre {
         word-wrap: normal;
     }
 
-.trans {
+#trans {
     width: 100px;
     height: 100px;
     background: red;
@@ -206,10 +206,23 @@ pre {
     transition: width 2s, height 4s;
 }
 
-    .trans.change {
+    #trans:hover {
         width: 300px;
         height: 300px;
     }
+
+.transEx {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+}
+    .change {
+        width: 300px;
+        height: 300px;
+    }
+
 
 #cf {
     position: relative;

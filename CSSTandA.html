@@ -44,11 +44,13 @@
         <div class="section" id="div1">
             <h2>Transitions</h2>
             <button class="button" onclick="showTransition()">Show transition</button>
-            <div class="trans">
+            <div class="transEx">
             </div>
             <script>
                 function showTransition() {
-                    document.getElementsByClassName("trans").classList.add("change");
+                    var box = document.getElementsByClassName("transEx");
+
+                    box.classList.add("change");
                 }
                 
 
