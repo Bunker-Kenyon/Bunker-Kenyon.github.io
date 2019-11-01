@@ -41,12 +41,18 @@
             <a href="CSSAnimations.html">CSS3 Animations without Custom Libraries</a>
         </nav>
 
-        <div class="section">
+        <div class="section" id="div1">
             <h2>Transitions</h2>
-            <div id="trans">
-
+            <button class="button" onclick="showTransition()">Show transition</button>
+            <div class="trans">
             </div>
+            <script>
+                function showTransition() {
+                    document.getElementsByClassName("trans").classList.add("change");
+                }
+                
 
+            </script>
         </div>
         <div class="section">
             <h3>Hover mouse over image</h3>

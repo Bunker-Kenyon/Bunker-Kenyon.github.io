@@ -198,7 +198,7 @@ pre {
         word-wrap: normal;
     }
 
-#trans {
+.trans {
     width: 100px;
     height: 100px;
     background: red;
@@ -206,7 +206,7 @@ pre {
     transition: width 2s, height 4s;
 }
 
-    #trans:hover {
+    .trans.change {
         width: 300px;
         height: 300px;
     }
