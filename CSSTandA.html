@@ -50,13 +50,12 @@
                 function showTransition() {
                     var x = document.querySelector('.transEx');
                     x.classList.toggle('change');
-                }
-                
-
+                }              
             </script>
         </div>
         <div class="section">
             <button class="button" onclick="crossFade()">Start Cross Fade</button>
+            <p>Keep clicking to switch pictures</p>
             <div id="cf">
 
                 <img id="img1" style="width:500px; height:500px" />
@@ -82,7 +81,7 @@
                         document.getElementById('img1').src = images[imgidx];;
                 }
 
-                window.crossFade = function () {
+                crossFade = function () {
                     if (imgtoggle)
                         document.getElementById('img2').style.opacity = '1.0';
                     else
@@ -96,6 +95,7 @@
         <div class="section">
             <h2>Animations and Transform</h2>
             <button class="button" onclick="startAnimation()">Roll the Stargate</button>
+            <p></p>
             <div id="anime">
                 <img class="top" src="stargate.png" align="middle" style="width:inherit; height:inherit" />
             </div>
