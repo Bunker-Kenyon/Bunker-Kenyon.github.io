@@ -218,12 +218,29 @@ pre {
     -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
     transition: width 2s, height 4s;
 }
-    .change {
-        width: 300px;
-        height: 300px;
-    }
+.transEx.change {
+    width: 300px;
+    height: 300px;
+}
+
+#img1 {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+}
+#img2 {
+    position: absolute;
+    left: 0;
+    -webkit-transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -o-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+}
 
 
+/*
 #cf {
     position: relative;
     height: 500px;
@@ -240,18 +257,19 @@ pre {
         transition:         opacity 4s ease-in-out;
     }
 
-        #cf img.top:hover {
+        #cf img.top {
             opacity: 0;
         }
+*/
 
-.anime {
+#anime {
     height: 400px;
     width: 400px;
     background-color: red;
-    animation: pulse 3s ease infinite alternate, nudge 4.5s linear infinite alternate;
+    /*animation: pulse 3s ease infinite alternate, nudge 4.5s linear infinite alternate;*/
     border-radius: 100%;
     align-items: center;
-    transform: rotate(360deg);
+    /*transform: rotate(360deg);*/
 }
 
 @keyframes pulse {
