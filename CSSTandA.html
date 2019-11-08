@@ -54,10 +54,10 @@
                 
             </script>
         </div>
-        <div class="section">
+        <div class="section" id="cf">
             <button class="button" onclick="crossFade()">Start Cross Fade</button>
             <p>Keep clicking to switch pictures</p>
-            <div id="cf">
+            <div id="cf" style="position: relative; padding: 0px">
 
                 <img id="img1" style="width:500px; height:500px" />
                 <img id="img2" style="width:500px; height:500px" />
@@ -83,10 +83,11 @@
                 }
 
                 crossFade = function () {
-                    if (imgtoggle)
-                        document.getElementById('img2').style.opacity = '1.0';
-                    else
-                        document.getElementById('img2').style.opacity = '0.0';
+                    if (parseInt(document.getElementById('img2').style.opacity) == 1) {
+                        document.getElementById('img2').style.opacity = 0;
+                    } else {
+                        document.getElementById('img2').style.opacity = 1;
+                    }
                     nextImage();
                 }
 
