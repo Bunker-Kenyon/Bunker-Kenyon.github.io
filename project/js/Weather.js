@@ -24,7 +24,7 @@ export class Weather {
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 localWeather = JSON.parse(this.responseText);
-                console.log(localWeatherText);
+                console.log(localWeather);
             }
         };
         xmlhttp.open("GET", weatherURL, true);
