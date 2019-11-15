@@ -4,9 +4,7 @@ import { Weather } from './Weather.js';
     const weather = new Weather();
     const key = weather.getKey()
 
-    function setupWeather() {
-        weather.getWeather(85140, key);
-    }
+    weather.getWeather(85140, key);
     
 
 
