@@ -4,12 +4,12 @@ export class Weather {
         this.zipCode = zipCode
     }
     
-    static getKey() {
+    getKey() {
         let apiID = "3c1f0026935cf8c5b2695f49e552d817";
         return apiID;
     }
 
-    static getWeather(zipCode, key) {
+    getWeather(zipCode, key) {
         this.zipCode = zipCode;
         this.key = key;
 
