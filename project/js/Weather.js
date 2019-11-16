@@ -45,7 +45,7 @@ export class Weather {
         tempurature = weatherDetails.main.temp;
         condition = weatherDetails.weather.main;
 
-        console.log(city, + ", " + tempurature, ", " + condition)
+        console.log(city, + ", " + tempurature, ", " + condition);
 
         /*
             Weather conditon types:
