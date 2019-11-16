@@ -29,14 +29,14 @@ export class Weather {
             if (this.readyState == 4 && this.status == 200) {
                 localWeather = JSON.parse(this.responseText);
                 console.log(localWeather);
+
+                city = localWeather.name;
+                tempurature = localWeather.main.temp;
+                condition = localWeather.weather.main;
             }
         };
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
-
-        city = localWeather.name;
-        tempurature = localWeather.main.temp;
-        condition = localWeather.weather.main;
 
         console.log(city, + ", " + tempurature, ", " + condition);
 
