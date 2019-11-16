@@ -30,15 +30,15 @@ export class Weather {
                 localWeather = JSON.parse(this.responseText);
                 console.log(localWeather);
 
-                city = localWeather.name;
-                tempurature = localWeather.main.temp;
-                condition = localWeather.weather.main;
+                this.city = localWeather.name;
+                this.tempurature = localWeather.main.temp;
+                this.condition = localWeather.weather.main;
             }
         };
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
 
-        console.log(city, + ", " + tempurature, ", " + condition);
+        console.log(this.city, + ", " + this.tempurature, ", " + this.condition);
 
         return localWeather;
     }
