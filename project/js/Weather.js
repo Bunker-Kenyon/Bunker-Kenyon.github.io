@@ -38,7 +38,7 @@ export class Weather {
     }
 
     displayWeather() {
-        localWeather = getWeather(this.zipCode, this.key);
+        let localWeather = getWeather(this.zipCode, this.key);
         let weatherDetails = JSON.parse(localWeather);
 
         city = weatherDetails.name;
