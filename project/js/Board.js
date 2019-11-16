@@ -5,6 +5,7 @@ import { Weather } from './Weather.js';
     const key = weather.getKey()
 
     weather.getWeather(85140, key);
+    weather.displayWeather();
     
 
 
