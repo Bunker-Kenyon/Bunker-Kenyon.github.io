@@ -34,9 +34,15 @@ export class Weather {
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
 
+        city = localWeather.name;
+        tempurature = localWeather.main.temp;
+        condition = localWeather.weather.main;
+
+        console.log(city, + ", " + tempurature, ", " + condition);
+
         return localWeather;
     }
-
+/*
     displayWeather() {
         let localWeather = this.getWeather(this.zipCode, this.key);
         let weatherDetails = JSON.parse(localWeather);
@@ -47,7 +53,7 @@ export class Weather {
 
         console.log(city, + ", " + tempurature, ", " + condition);
 
-        /*
+        
             Weather conditon types:
                 Thunderstorm
                 Drizzle
@@ -57,6 +63,6 @@ export class Weather {
                 Clouds
                 Other (haze, fog, etc)
 
-        */
-    }
+        
+    }*/
 }
