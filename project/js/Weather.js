@@ -33,12 +33,14 @@ export class Weather {
                 this.city = localWeather.name;
                 this.tempurature = localWeather.main.temp;
                 this.condition = localWeather.weather.main;
+
+                console.log(this.city, + ", " + this.tempurature, ", " + this.condition);
             }
         };
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
 
-        console.log(this.city, + ", " + this.tempurature, ", " + this.condition);
+        
 
         return localWeather;
     }
