@@ -17,7 +17,7 @@ export class Weather {
         this.zipCode = zipCode;
         this.key = key;
 
-        let localWeather;
+        var localWeather;
         
         let weatherURL = "http://api.openweathermap.org/data/2.5/weather?zip="
             + zipCode
