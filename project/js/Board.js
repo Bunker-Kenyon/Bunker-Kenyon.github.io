@@ -1,6 +1,6 @@
 import { Weather } from './Weather.js';
 
-function populateWeather() {
+window.populateWeather = function() {
     const weather = new Weather();
     const key = weather.getKey();
 
