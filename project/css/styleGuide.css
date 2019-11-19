@@ -132,8 +132,8 @@ ul {
 
 .widget {
   display: flex;
-  height: 300px;
-  width: 600px;
+  height: inherit;
+  width: inherit;
   flex-wrap: wrap;
   cursor: pointer;
   border-radius: 20px;
@@ -188,7 +188,7 @@ ul {
 }
 .widget .date {
   flex: 0 0 30%;
-  height: 40%;
+  height: inherit;
   background: #70c1b3;
   border-bottom-right-radius: 20px;
   display: flex;
