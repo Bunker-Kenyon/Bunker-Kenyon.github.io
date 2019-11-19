@@ -32,7 +32,7 @@ export class Weather {
 
                 this.city = localWeather.name;
                 this.tempurature = localWeather.main.temp;
-                this.condition = localWeather.weather.main;
+                this.condition = localWeather.weather[0].main;
 
                 console.log(this.city);
                 console.log(this.tempurature);
