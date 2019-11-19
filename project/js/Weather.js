@@ -34,7 +34,9 @@ export class Weather {
                 this.tempurature = localWeather.main.temp;
                 this.condition = localWeather.weather.main;
 
-                console.log(this.city, + ", " + this.tempurature, ", " + this.condition);
+                console.log(this.city);
+                console.log(this.tempurature);
+                console.log(this.condition);
             }
         };
         xmlhttp.open("GET", weatherURL, true);
