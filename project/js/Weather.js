@@ -42,9 +42,6 @@ export class Weather {
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
 
-        
-
-        return localWeather;
     }
 /*
     displayWeather() {
