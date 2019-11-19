@@ -4,5 +4,5 @@ window.populateWeather = function() {
     const weather = new Weather();
     const key = weather.getKey();
 
-    weather.getWeather(85140, key);
+    weather.calcWeather(85140, key);
 }

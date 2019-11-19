@@ -6,14 +6,19 @@ export class Weather {
         var tempurature = 0.0;
         var condition = '';
     }
-    
-    
-    getKey() {
-        let apiID = "3c1f0026935cf8c5b2695f49e552d817";
-        return apiID;
-    }
 
-    getWeather(zipCode, key) {
+    getKey() { return "3c1f0026935cf8c5b2695f49e552d817"; }
+
+    getZipCode() { return this.zipCode; }
+
+    getCity() { return this.city; }
+
+    getTempurature() { return this.tempurature; }
+
+    getCondition() { return this.condition; }
+
+
+    calcWeather(zipCode, key) {
         this.zipCode = zipCode;
         this.key = key;
 
@@ -43,6 +48,8 @@ export class Weather {
         xmlhttp.send();
 
     }
+
+    
 /*
     displayWeather() {
         let localWeather = this.getWeather(this.zipCode, this.key);
