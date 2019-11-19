@@ -3,7 +3,7 @@ export class Weather {
         this.key = key;
         this.zipCode = zipCode;
         var city = '';
-        var tempurature = '';
+        var tempurature = 0.0;
         var condition = '';
     }
     
