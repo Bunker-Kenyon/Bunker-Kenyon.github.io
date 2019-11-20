@@ -20,10 +20,8 @@
     <div>
         <label>ZipCode:</label>
         <input type="number" name="zipCode" value="85140">
-        <button onclick="populateWeather()">Get Weather</button>
-        <script>
-
-        </script>
+        <button onclick="populateWeather(85140)">Get Weather</button>
+        
     </div>
 
     <article class="widget">
@@ -33,14 +31,17 @@
             </video>
         </div>
         <div class="weatherInfo">
-            <div class="temperature"><span>25&deg;</span></div>
+            <div class="temperature" id="temp"></div>
             <div class="description">
-                <div class="weatherCondition">CLOUDY</div>
-                <div class="place">New York, New York</div>
+                <div class="weatherCondition" id="condition">CLOUDY</div>
+                <div class="place" id="plc">New York, New York</div>
             </div>
         </div>
         <div class="date">1st Jan</div>
     </article>
+    <script>
+        
+    </script>
 
     <div class="section">
         <ul>

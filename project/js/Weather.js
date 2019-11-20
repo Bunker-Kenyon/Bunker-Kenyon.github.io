@@ -50,7 +50,12 @@ export class Weather {
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
 
+        var weatherInfo = [this.city, this.tempurature, this.condition];
+        return weatherInfo;
+
     }
+
+    
 
     
 /*
