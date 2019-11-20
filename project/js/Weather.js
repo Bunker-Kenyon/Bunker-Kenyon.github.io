@@ -17,6 +17,9 @@ export class Weather {
 
     getCondition() { return this.condition; }
 
+    setZipCode(zipCode) { this.zipCode = zipCode; }
+
+
 
     calcWeather(zipCode, key) {
         this.zipCode = zipCode;
