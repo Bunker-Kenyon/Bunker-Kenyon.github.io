@@ -6,7 +6,7 @@ window.populateWeather = function(zipCode) {
 
     weather.calcWeather(zipCode, key);
 
-    document.getElementById("temp").innerHTML = "<span>" + weather.getTempurature() + "&deg</span>";
+    document.getElementById("temp").innerHTML = "<span>" + weather.tempurature + "&deg</span>";
     var x = 0;
     
 }
