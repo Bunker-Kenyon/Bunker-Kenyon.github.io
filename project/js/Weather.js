@@ -40,13 +40,13 @@ export class Weather {
                 localWeather = JSON.parse(this.responseText);
                 console.log(localWeather);
 
-                this.city = localWeather.name;
-                this.tempurature = localWeather.main.temp;
-                this.condition = localWeather.weather[0].main;
+                city = localWeather.name;
+                tempurature = localWeather.main.temp;
+                condition = localWeather.weather[0].main;
 
-                console.log(this.city);
-                console.log(this.tempurature);
-                console.log(this.condition);
+                console.log(city);
+                console.log(tempurature);
+                console.log(condition);
             }
         };
         xmlhttp.open("GET", weatherURL, true);
