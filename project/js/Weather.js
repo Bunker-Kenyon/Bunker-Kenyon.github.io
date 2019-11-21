@@ -26,6 +26,7 @@ export class Weather {
         this.key = key;
 
         var localWeather;
+        var weatherInfo;
         
         let weatherURL = "http://api.openweathermap.org/data/2.5/weather?zip="
             + zipCode
@@ -45,12 +46,14 @@ export class Weather {
                 console.log(this.city);
                 console.log(this.tempurature);
                 console.log(this.condition);
+
+                weatherInfo = [this.city, this.tempurature, this.condition];
             }
         };
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
 
-        var weatherInfo = [this.city, this.tempurature, this.condition];
+        
         return weatherInfo;
 
     }
