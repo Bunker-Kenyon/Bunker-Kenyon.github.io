@@ -2,9 +2,9 @@ export class Weather {
     weather(zipCode, key) {
         this.key = key;
         this.zipCode = zipCode;
-        var city = '';
-        var tempurature = 0.0;
-        var condition = '';
+        this.city = city;
+        this.tempurature = tempurature;
+        this.condition = condition;
     }
 
     getKey() { return "3c1f0026935cf8c5b2695f49e552d817"; }
