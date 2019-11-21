@@ -46,15 +46,10 @@ export class Weather {
                 console.log(this.city);
                 console.log(this.tempurature);
                 console.log(this.condition);
-
-                weatherInfo = [this.city, this.tempurature, this.condition];
             }
         };
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
-
-        
-        return weatherInfo;
 
     }
 
