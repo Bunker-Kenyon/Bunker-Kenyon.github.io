@@ -38,8 +38,8 @@ export class Weather {
 
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = () => {
-            if (this.readyState == 4 && this.status == 200) {
-                localWeather = JSON.parse(this.responseText);
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                localWeather = JSON.parse(xmlhttp.responseText);
                 console.log(localWeather);
 
                 this.city = localWeather.name;
