@@ -40,9 +40,9 @@ export class Weather {
                 localWeather = JSON.parse(this.responseText);
                 console.log(localWeather);
 
-                city = localWeather.name;
-                tempurature = localWeather.main.temp;
-                condition = localWeather.weather[0].main;
+                this.city = localWeather.name;
+                this.tempurature = localWeather.main.temp;
+                this.condition = localWeather.weather[0].main;
 
                 console.log(city);
                 console.log(tempurature);
