@@ -1,4 +1,6 @@
 export class Weather {
+
+    //Member variables
     city;
     tempurature;
     condition;
@@ -35,7 +37,7 @@ export class Weather {
             + key;
 
         let xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
+        xmlhttp.onreadystatechange = () => {
             if (this.readyState == 4 && this.status == 200) {
                 localWeather = JSON.parse(this.responseText);
                 console.log(localWeather);
@@ -54,9 +56,6 @@ export class Weather {
 
     }
 
-    
-
-    
 /*
     displayWeather() {
         let localWeather = this.getWeather(this.zipCode, this.key);
