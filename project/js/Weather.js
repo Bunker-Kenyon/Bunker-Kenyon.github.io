@@ -24,7 +24,7 @@ export class Weather {
 
 
 
-    calcWeather(zipCode, key) {
+    calcWeather(zipCode, key, callBack) {
         this.zipCode = zipCode;
         this.key = key;
 
@@ -49,6 +49,7 @@ export class Weather {
                 console.log(this.city);
                 console.log(this.tempurature);
                 console.log(this.condition);
+                callBack();
             }
         };
         xmlhttp.open("GET", weatherURL, true);
