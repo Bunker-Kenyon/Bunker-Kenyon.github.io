@@ -43,7 +43,7 @@ export class Weather {
                 console.log(localWeather);
 
                 this.city = localWeather.name;
-                this.tempurature = localWeather.main.temp;
+                this.tempurature = (localWeather.main.temp).toFixed(0);
                 this.condition = localWeather.weather[0].main;
 
                 console.log(this.city);
