@@ -132,8 +132,8 @@ ul {
 
 .widget {
   display: flex;
-  height: inherit;
-  width: inherit;
+  height: 200px;
+  width: 250px;
   flex-wrap: wrap;
   cursor: pointer;
   border-radius: 20px;
