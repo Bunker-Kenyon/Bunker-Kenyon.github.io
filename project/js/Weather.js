@@ -1,4 +1,6 @@
 export class Weather {
+
+    //Member variables
     city;
     tempurature;
     condition;
@@ -22,7 +24,7 @@ export class Weather {
 
 
 
-    calcWeather(zipCode, key) {
+    calcWeather(zipCode, key, callBack) {
         this.zipCode = zipCode;
         this.key = key;
 
@@ -35,18 +37,19 @@ export class Weather {
             + key;
 
         let xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                localWeather = JSON.parse(this.responseText);
+        xmlhttp.onreadystatechange = () => {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                localWeather = JSON.parse(xmlhttp.responseText);
                 console.log(localWeather);
 
-                city = localWeather.name;
-                tempurature = localWeather.main.temp;
-                condition = localWeather.weather[0].main;
+                this.city = localWeather.name;
+                this.tempurature = localWeather.main.temp;
+                this.condition = localWeather.weather[0].main;
 
-                console.log(city);
-                console.log(tempurature);
-                console.log(condition);
+                console.log(this.city);
+                console.log(this.tempurature);
+                console.log(this.condition);
+                callBack();
             }
         };
         xmlhttp.open("GET", weatherURL, true);
@@ -54,9 +57,6 @@ export class Weather {
 
     }
 
-    
-
-    
 /*
     displayWeather() {
         let localWeather = this.getWeather(this.zipCode, this.key);
