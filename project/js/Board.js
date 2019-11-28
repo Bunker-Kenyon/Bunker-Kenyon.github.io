@@ -9,6 +9,10 @@ window.populateWeather = function(zipCode) {
         document.getElementById("condition").innerHTML = weather.getCondition();
         document.getElementById("plc").innerHTML = weather.getCity();
         document.getElementById("dt").innerHTML = formatDate(new Date());
+
+        var video = document.getElementById("vd");
+        video.src = "media\\" + weather.getVidLink();
+        console.log(video.src = "media\\" + weather.getVidLink());
     });
 
     function formatDate(date) {

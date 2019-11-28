@@ -4,7 +4,9 @@ export class Weather {
     city;
     tempurature;
     condition;
+    vidLink;
 
+    //Constructor
     weather(zipCode, key) {
         this.key = key;
         this.zipCode = zipCode;
@@ -20,11 +22,14 @@ export class Weather {
 
     getCondition() { return this.condition; }
 
+    getVidLink() { return this.vidLink}
+
     setZipCode(zipCode) { this.zipCode = zipCode; }
 
 
 
     calcWeather(zipCode, key, callBack) {
+        console.log(zipCode);
         this.zipCode = zipCode;
         this.key = key;
 
@@ -45,16 +50,49 @@ export class Weather {
                 this.city = localWeather.name;
                 this.tempurature = (localWeather.main.temp).toFixed(0);
                 this.condition = localWeather.weather[0].main;
+                this.vidLink = this.calcWeatherCondition(this.condition);
 
+                console.log(this.zipCode);
                 console.log(this.city);
                 console.log(this.tempurature);
                 console.log(this.condition);
+                console.log(this.vidLink);
+
                 callBack();
             }
         };
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
 
+    }
+
+    calcWeatherCondition(condition) {
+        let vidLink;
+        switch(condition) {
+            case "Thunderstorm":
+                vidLink = "thunderstorm.mp4";
+                break;
+            case "Drizzle":
+                vidLink = "drizzle.mp4";
+                break;
+            case "Rain": 
+                vidLink = "rain.mp4";
+                break;
+            case "Snow": 
+                vidLink = "snow.mp4";
+                break;
+            case "Clear": 
+                vidLink = "clear.mp4";
+                break;
+            case "Clouds": 
+                vidLink = "clouds.mp4";
+                break;
+            default:
+                vidLink = "fog.mp4";
+
+        }
+
+        return vidLink;
     }
 
 /*

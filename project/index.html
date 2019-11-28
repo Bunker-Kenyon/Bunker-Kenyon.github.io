@@ -19,25 +19,25 @@
     </div>
     <div>
         <label>ZipCode:</label>
-        <input type="number" name="zipCode" value="85140">
-        <button onclick="populateWeather(85140)">Get Weather</button>
+        <input type="number" name="zipCode" value="85140" id="zipcode">
+        
+        <button onclick="populateWeather(document.getElementById('zipcode').value)">Get Weather</button>
+        
         
     </div>
 
     <article class="widget">
         <div class="weatherIcon">
-            <video class="vid" autoplay muted loop>
-                <source src="media\clouds.mp4" type="video/mp4">
-            </video>
+            <video class="vid" id="vd" autoplay muted loop></video>
         </div>
         <div class="weatherInfo">
             <div class="temperature" id="temp"></div>
             <div class="description">
-                <div class="weatherCondition" id="condition">CLOUDY</div>
-                <div class="place" id="plc">New York, New York</div>
+                <div class="weatherCondition" id="condition"></div>
+                <div class="place" id="plc"></div>
             </div>
         </div>
-        <div class="date" id="dt">1st Jan</div>
+        <div class="date" id="dt"></div>
     </article>
     <script>
         
