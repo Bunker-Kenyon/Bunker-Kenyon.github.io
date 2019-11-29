@@ -36,7 +36,7 @@ export class Weather {
         var localWeather;
         var weatherInfo;
         
-        let weatherURL = "http://api.openweathermap.org/data/2.5/weather?zip="
+        let weatherURL = "https://api.openweathermap.org/data/2.5/weather?zip="
             + zipCode
             + ",us&units=imperial&APPID="
             + key;
