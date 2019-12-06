@@ -27,7 +27,6 @@ export class Weather {
     setZipCode(zipCode) { this.zipCode = zipCode; }
 
 
-
     calcWeather(zipCode, key, callBack) {
         console.log(zipCode);
         this.zipCode = zipCode;
