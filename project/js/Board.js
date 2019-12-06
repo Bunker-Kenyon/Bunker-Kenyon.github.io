@@ -8,7 +8,7 @@ window.populateWeather = function(zipCode) {
     const key = weather.getKey();
 
     //local storage key
-    let itemKey = "zipCodes";
+    //let itemKey = "zipCodes";
 
 
     weather.calcWeather(zipCode, key, (thisWeather) => {
@@ -20,9 +20,9 @@ window.populateWeather = function(zipCode) {
         var video = document.getElementById("vd");
         video.src = "media\\" + weather.getVidLink();
 
-        zipCodeArray.push(zipCode);
-        console.log("zipCodeArray: " + zipCodeArray.toString());
-        localStorageHelper();
+        //zipCodeArray.push(zipCode);
+        //console.log("zipCodeArray: " + zipCodeArray.toString());
+        //localStorageHelper();
     });
 
     function formatDate(date) {
@@ -40,7 +40,7 @@ window.populateWeather = function(zipCode) {
         return day + ' ' + monthNames[monthIndex] + ' ' + year;
       }
 
-      function localStorageHelper() {
+      /*function localStorageHelper() {
         if (localStorage.getItem(itemKey) === null) {
           alert('noStorage');
           localStorage.setItem(itemKey, JSON.stringify(zipCodeArray));
@@ -51,6 +51,6 @@ window.populateWeather = function(zipCode) {
         console.log("retrivedZipCodes: " + retrivedZipCodes.toString());
         zipCodeArray = retrivedZipCodes;
         console.log("zipCodeArray after localStorage: " + zipCodeArray.toString());
-      }
+      }*/
     
 }
