@@ -20,30 +20,34 @@
     <div>
         <label>ZipCode:</label>
         <input type="number" name="zipCode" value="85140" id="zipcode">
-        <button onClick="setZipCodes()">Set ZipCodes</button>
-        <button onclick="populateWeather(document.getElementById('zipcode')
-            .value)">Get Weather</button>
+        <button onClick="setZipCodes()">Save ZipCodes</button>
+        <ul id="zipCodesList"><li>ZipCodes:</li></ul>
+        
+        <!--<button onclick="populateWeather
+            (document.getElementById('zipcode').value)">Get Weather</button>-->
+
+        <button onclick="loopCards()">Get Weather</button>
             
         
         
     </div>
-
-    <article class="widget">
-        <div class="weatherIcon">
-            <video class="vid" id="vd" autoplay muted loop></video>
-        </div>
-        <div class="weatherInfo">
-            <div class="temperature" id="temp"></div>
-            <div class="description">
-                <div class="weatherCondition" id="condition"></div>
-                <div class="place" id="plc"></div>
+    <div id="board">
+        <article class="widget">
+            <div class="weatherIcon">
+                <video class="vid" id="vd" autoplay muted loop></video>
             </div>
-        </div>
-        <div class="date" id="dt"></div>
-    </article>
-    <script>
-        
-    </script>
+            <div class="weatherInfo">
+                <div class="temperature" id="temp"></div>
+                <div class="description">
+                    <div class="weatherCondition" id="condition"></div>
+                    <div class="place" id="plc"></div>
+                </div>
+            </div>
+            <div class="date" id="dt"></div>
+        </article>
+    </div>
+
+    
 
 </body>
 </html>
