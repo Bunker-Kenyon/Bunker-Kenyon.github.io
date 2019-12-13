@@ -50,14 +50,18 @@ window.populateWeather = function(zipCode) {
 //saves the zipcodes to localStorage
 window.setZipCodes = function()  {
   let zipcode = document.getElementById('zipcode').value
-  
-  let node = document.createElement('li');
-  let textnode = document.createTextNode(zipcode);
-  node.appendChild(textnode);
-  document.getElementById('zipCodesList').appendChild(node);
-  zipCodeArray.push(zipcode);
-  console.log("zipCodeArray to save: " + zipCodeArray.toString());
-  localStorageHelper.saveZipCodes();
+  if (weather.isValidUSZip(zipcode) === true) {
+    let node = document.createElement('li');
+    let textnode = document.createTextNode(zipcode);
+    node.appendChild(textnode);
+    document.getElementById('zipCodesList').appendChild(node);
+    zipCodeArray.push(zipcode);
+    console.log("zipCodeArray to save: " + zipCodeArray.toString());
+    localStorageHelper.saveZipCodes();
+  }
+  else {
+    alert('Please input at a proper zip code');
+  }
 }
 
 //Loads the zipcodes from localstorage,
@@ -140,7 +144,7 @@ window.clearZipCodes = function () {
 /*
 TODO:
 1. User Input validation for zipcodes
-2. I ran into an issue with AJAX where if I tried to get weather without loading saved zip codes it wouldn't work
+2. Done - I ran into an issue with AJAX where if I tried to get weather without loading saved zip codes it wouldn't work
 3. Done - Make button for clearing zipcodes
 4. Done - Better Instructions for loop. Maybe shorten the loop?
 */
