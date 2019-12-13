@@ -92,7 +92,7 @@ window.loopCards = function() {
       fadeOut();
       loopCards();             
     }                     
-  }, 30000)
+  }, 20000)
 }
 
 //Opening animation
@@ -117,4 +117,7 @@ window.pulsateButton = function () {
 /*
 TODO:
 1. User Input validation for zipcodes
+2. I ran into an issue with AJAX where if I tried to get weather without loading saved zip codes it wouldn't work
+3. Make button for clearing zipcodes
+4. Better Instructions for loop. Maybe shorten the loop?
 */
