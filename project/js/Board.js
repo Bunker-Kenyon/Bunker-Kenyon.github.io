@@ -18,7 +18,7 @@ window.populateWeather = function(zipCode) {
   const key = weather.getKey();
 
   //calls calcWeather from Weather
-  //Does all the heavy work of popualting the date in the widget
+  //Does all the heavy work of popualting the data in the widget
   weather.calcWeather(zipCode, key, (thisWeather) => {
       document.getElementById("temp").innerHTML = "<span>" + weather.getTempurature() + "&deg</span>";
       document.getElementById("condition").innerHTML = weather.getCondition();
@@ -115,6 +115,7 @@ window.pulsateButton = function () {
   }
 }
 
+//CLears local storage and the html list of zipcodes
 window.clearZipCodes = function () {
   //Clear the storage
   localStorageHelper.clearLocalStorage();
@@ -133,10 +134,13 @@ window.clearZipCodes = function () {
   zipCodeList.appendChild(node);
 }
 
+
+
+
 /*
 TODO:
 1. User Input validation for zipcodes
 2. I ran into an issue with AJAX where if I tried to get weather without loading saved zip codes it wouldn't work
-3. Make button for clearing zipcodes
+3. Done - Make button for clearing zipcodes
 4. Done - Better Instructions for loop. Maybe shorten the loop?
 */

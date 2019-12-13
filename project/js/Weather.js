@@ -49,6 +49,13 @@ export class Weather {
             + ",us&units=imperial&APPID="
             + key;
 
+        if (typeof zipCode === 'undefined') {
+            alert('Please input at least one zip code');
+        }
+        else if(zipCode === null) {
+            alert('Please input at least one zip code');
+        }
+        else {
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = () => {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -71,6 +78,8 @@ export class Weather {
         };
         xmlhttp.open("GET", weatherURL, true);
         xmlhttp.send();
+        }
+        
 
     }
 
