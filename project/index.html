@@ -17,16 +17,17 @@
         <header class="header">
             <h1>Current Weather App</h1>
         </header>
-        <h4>Input a few zipcodes or load previously saved ones. When ready, get the weather!</h4>
-        <h4>The Widget will appear and loop though your chosen locations/zipcodes every 20 seconds.</h4>
+        <h4>Input a few zip codes or load previously saved ones. When ready, get the weather!</h4>
+        <h4>The Widget will appear and loop though your chosen locations/zip codes every 20 seconds.</h4>
     </div>
 
     <!--Button Groups-->
     <div class="buttonGroup">
         <label>ZipCode:</label>
         <input type="number" name="zipCode" value="85140" id="zipcode">
-        <button onClick="setZipCodes()">Save ZipCodes</button<span><button id="load" onclick="loadZipCodes()">Load Saved ZipCodes</button></span>
-        <ul id="zipCodesList"><li>ZipCodes:</li></ul>
+        <button onClick="setZipCodes()">Save Zip Codes</button<span><button id="load" onclick="loadZipCodes()">Load Saved ZipCodes</button></span>
+        <ul id="zipCodesList"><li>Zip Codes:</li></ul>
+        <button onclick="clearZipCodes()">Clear Zip Codes</button>
         <button onclick="loopCards()">Get Weather</button>
     </div>
 

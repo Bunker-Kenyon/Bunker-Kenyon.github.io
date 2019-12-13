@@ -32,4 +32,8 @@ export class LocalStorageHelper {
             return [];
         }
     }
+
+    clearLocalStorage() {
+        localStorage.removeItem(this.itemKey);
+    }
 }

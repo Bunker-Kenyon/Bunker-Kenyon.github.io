@@ -8,11 +8,12 @@ import { LocalStorageHelper } from './LocalStorageHelper.js';
 var zipCodeArray = [];
 var loopCardsLoopCount = 0;
 const localStorageHelper = new LocalStorageHelper(zipCodeArray);
+//Weather object (I love ES6!)  
+const weather = new Weather();
 
 //Main function for populateing the weather widget
 window.populateWeather = function(zipCode) {
-  //Weather object (I love ES6!)  
-  const weather = new Weather();
+  
   //API Key
   const key = weather.getKey();
 
@@ -114,10 +115,28 @@ window.pulsateButton = function () {
   }
 }
 
+window.clearZipCodes = function () {
+  //Clear the storage
+  localStorageHelper.clearLocalStorage();
+
+  //removes the pulsate from the laod button
+  document.getElementById("load").classList.remove('pulsateButton');
+
+  //Clears html zip code list
+  let zipCodeList = document.getElementById("zipCodesList");
+  zipCodeList.innerHTML = '';
+
+  //Re-adds the first li of 'Zip Codes'
+  let node = document.createElement('li');
+  let textnode = document.createTextNode("Zip Codes");
+  node.appendChild(textnode);
+  zipCodeList.appendChild(node);
+}
+
 /*
 TODO:
 1. User Input validation for zipcodes
 2. I ran into an issue with AJAX where if I tried to get weather without loading saved zip codes it wouldn't work
 3. Make button for clearing zipcodes
-4. Better Instructions for loop. Maybe shorten the loop?
+4. Done - Better Instructions for loop. Maybe shorten the loop?
 */
