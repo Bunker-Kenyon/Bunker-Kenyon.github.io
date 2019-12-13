@@ -1,3 +1,9 @@
+/***********************************
+ * WEATHER
+ * Holds all the functiosn and 
+ * variables for populating weeather 
+ * in the widget
+ ***********************************/
 export class Weather {
 
     //Member variables
@@ -12,6 +18,7 @@ export class Weather {
         this.zipCode = zipCode;
     }
 
+    //Getters and setters
     getKey() { return "3c1f0026935cf8c5b2695f49e552d817"; }
 
     getZipCode() { return this.zipCode; }
@@ -27,6 +34,8 @@ export class Weather {
     setZipCode(zipCode) { this.zipCode = zipCode; }
 
 
+    //Does all the heavy work of popualting the date in the widget
+    //XMLHTML Request is in here
     calcWeather(zipCode, key, callBack) {
         console.log(zipCode);
         this.zipCode = zipCode;
@@ -65,6 +74,7 @@ export class Weather {
 
     }
 
+    //Calculates the weather condition to be displayed in the video tag
     calcWeatherCondition(condition) {
         let vidLink;
         switch(condition) {
@@ -88,33 +98,8 @@ export class Weather {
                 break;
             default:
                 vidLink = "fog.mp4";
-
         }
 
         return vidLink;
     }
-
-/*
-    displayWeather() {
-        let localWeather = this.getWeather(this.zipCode, this.key);
-        let weatherDetails = JSON.parse(localWeather);
-
-        city = weatherDetails.name;
-        tempurature = weatherDetails.main.temp;
-        condition = weatherDetails.weather.main;
-
-        console.log(city, + ", " + tempurature, ", " + condition);
-
-        
-            Weather conditon types:
-                Thunderstorm
-                Drizzle
-                Rain
-                Snow
-                Clear
-                Clouds
-                Other (haze, fog, etc)
-
-        
-    }*/
 }

@@ -1,3 +1,7 @@
+/***********************************
+ * LocalStorageHelper
+ * Loads and saves to local storage
+ ***********************************/
 export class LocalStorageHelper {
     constructor(zipCodeArray) {
         this.zipCodeArray = zipCodeArray;

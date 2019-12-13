@@ -10,7 +10,7 @@
     <style>
     </style>
 </head>
-<body>
+<body onload="pulsateButton()">
 
     <!--Heading-->
     <div>
@@ -25,7 +25,7 @@
     <div class="buttonGroup">
         <label>ZipCode:</label>
         <input type="number" name="zipCode" value="85140" id="zipcode">
-        <button onClick="setZipCodes()">Save ZipCodes</button><span><button onclick="loadZipCodes()">Load Saved ZipCodes</button></span>
+        <button onClick="setZipCodes()">Save ZipCodes</button<span><button id="load" onclick="loadZipCodes()">Load Saved ZipCodes</button></span>
         <ul id="zipCodesList"><li>ZipCodes:</li></ul>
         <button onclick="loopCards()">Get Weather</button>
     </div>
