@@ -67,15 +67,17 @@ window.loadZipCodes = function() {
 }
 
 //Loops though the weather and ends
-var i = 1;
+var i = 0;
 window.loopCards = function() {
   startAnimation();
-  populateWeather(zipCodeArray[0]);
+  
+  populateWeather(zipCodeArray[i]);
   setTimeout(function () {
-    populateWeather(zipCodeArray[i]);
+    
     i++;                     
     if (i < zipCodeArray.length) {            
       console.log("ZipCode in Array: " + zipCodeArray[i]);
+      fadeOut();
       loopCards();             
     }                     
   }, 30000)
@@ -84,4 +86,9 @@ window.loopCards = function() {
 window.startAnimation = function () {
   var x = document.getElementById("board");
   x.style.animation = "nudge 4.5s linear";
+}
+
+window.fadeOut = function () {
+  var x = document.getElementById("board");
+  x.style.animation = "fadeOut 4.5s linear";
 }
