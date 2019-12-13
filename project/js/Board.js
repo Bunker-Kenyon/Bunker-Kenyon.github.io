@@ -113,3 +113,8 @@ window.pulsateButton = function () {
     document.getElementById("load").classList.add('pulsateButton');
   }
 }
+
+/*
+TODO:
+1. User Input validation for zipcodes
+*/
