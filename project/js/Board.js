@@ -2,6 +2,7 @@ import { Weather } from './Weather.js';
 import { LocalStorageHelper } from './LocalStorageHelper.js';
 var zipCodeArray = [];
 var loopCardsLoopCount = 0;
+const localStorageHelper = new LocalStorageHelper(zipCodeArray);
 
 window.populateWeather = function(zipCode) {
     const weather = new Weather();
@@ -33,6 +34,7 @@ window.populateWeather = function(zipCode) {
       
         return day + ' ' + monthNames[monthIndex] + ' ' + year;
       }
+      
     
 }
 
@@ -44,34 +46,42 @@ window.setZipCodes = function()  {
   node.appendChild(textnode);
   document.getElementById('zipCodesList').appendChild(node);
   zipCodeArray.push(zipcode);
-  console.log("zipCodeArray: " + zipCodeArray.toString());
-
-  const localStorageHelper = new LocalStorageHelper(zipCodeArray);
-
+  console.log("zipCodeArray to save: " + zipCodeArray.toString());
   localStorageHelper.saveZipCodes();
-  
 }
-var i = 0;
+
+window.loadZipCodes = function() {
+  if(localStorage.getItem(localStorageHelper.getItemKey() === null)) {
+    alert('No saved Zip Codes. Please add Zip Codes')
+  }
+  else {
+    zipCodeArray = localStorageHelper.getZipCodes();
+    console.log("ZipCodes from localStorage: " + zipCodeArray.toString());
+    for (var i = 0; i < zipCodeArray.length; i++) {
+      let node = document.createElement('li');
+      let textnode = document.createTextNode(zipCodeArray[i]);
+      node.appendChild(textnode);
+      document.getElementById('zipCodesList').appendChild(node);
+    }
+  }
+}
+
+//Loops though the weather and ends
+var i = 1;
 window.loopCards = function() {
-  setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-    populateWeather(zipCodeArray[i])          //  your code here
-    i++;                     //  increment the counter
-    if (i < zipCodeArray.length) {            //  if the counter < 10, call the loop function
-      console.log("ZipCode in Array: " + zipCodeArray[i]);
-      loopCards();             //  ..  again which will trigger another 
-    }                        //  ..  setTimeout()
-  }, 3000)
-
-}
-/*window.addCards = function() {
-  //Create the widget
-  let art = document.createElement('article');
-  art.className = 'widget';
-
-
-}*/
-
-/*for (var i = 0; i < zipCodeArray.length; i++) {
+  startAnimation();
+  populateWeather(zipCodeArray[0]);
+  setTimeout(function () {
     populateWeather(zipCodeArray[i]);
-    console.log("Loop Number: " + i);
-    setTimeout(loopCards, 30000);*/
+    i++;                     
+    if (i < zipCodeArray.length) {            
+      console.log("ZipCode in Array: " + zipCodeArray[i]);
+      loopCards();             
+    }                     
+  }, 30000)
+}
+
+window.startAnimation = function () {
+  var x = document.getElementById("board");
+  x.style.animation = "nudge 4.5s linear";
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css\styleGuide.css">
-    <title>Kenyon Bunker CS 261</title>
+    <title>Kenyon Bunker CS 261 Final Project</title>
     <script type="module" src="js\Board.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,26 +11,26 @@
     </style>
 </head>
 <body>
+
     <!--Heading-->
     <div>
         <header class="header">
-            <h1>Kenyon Bunker Project</h1>
+            <h1>Current Weather App</h1>
         </header>
+        <h4>Input a few zipcodes or load previously saved ones. When ready, get the weather!</h4>
+        <h4>The Widget will appear and loop though your chosen locations.</h4>
     </div>
-    <div>
+
+    <!--Button Groups-->
+    <div class="buttonGroup">
         <label>ZipCode:</label>
         <input type="number" name="zipCode" value="85140" id="zipcode">
-        <button onClick="setZipCodes()">Save ZipCodes</button>
+        <button onClick="setZipCodes()">Save ZipCodes</button><span><button onclick="loadZipCodes()">Load Saved ZipCodes</button></span>
         <ul id="zipCodesList"><li>ZipCodes:</li></ul>
-        
-        <!--<button onclick="populateWeather
-            (document.getElementById('zipcode').value)">Get Weather</button>-->
-
         <button onclick="loopCards()">Get Weather</button>
-            
-        
-        
     </div>
+
+    <!--Main Widget-->
     <div id="board">
         <article class="widget">
             <div class="weatherIcon">
@@ -46,8 +46,5 @@
             <div class="date" id="dt"></div>
         </article>
     </div>
-
-    
-
 </body>
 </html>
