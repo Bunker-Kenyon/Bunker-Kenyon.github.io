@@ -143,7 +143,7 @@ window.clearZipCodes = function () {
 
 /*
 TODO:
-1. User Input validation for zipcodes
+1. Done - User Input validation for zipcodes
 2. Done - I ran into an issue with AJAX where if I tried to get weather without loading saved zip codes it wouldn't work
 3. Done - Make button for clearing zipcodes
 4. Done - Better Instructions for loop. Maybe shorten the loop?
