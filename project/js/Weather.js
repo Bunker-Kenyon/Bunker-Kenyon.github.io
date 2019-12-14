@@ -33,6 +33,10 @@ export class Weather {
 
     setZipCode(zipCode) { this.zipCode = zipCode; }
 
+    isValidUSZip(zip) {
+        return /^\d{5}(-\d{4})?$/.test(zip);
+     }
+
     //Does all the heavy work of popualting the date in the widget
     //XMLHTML Request is in here
     calcWeather(zipCode, key, callBack) {
@@ -48,15 +52,13 @@ export class Weather {
             + ",us&units=imperial&APPID="
             + key;
 
+
         //Checks if zipCode is undifiend or null before hitting the api
         if (typeof zipCode === 'undefined') {
             alert('Please input at least one zip code');
         }
         else if(zipCode === null) {
             alert('Please input at least one zip code');
-        }
-        else if (isValidUSZip(this.zipCode) !== true) {
-            alert('Please input at a proper zip code');
         }
         else {
         let xmlhttp = new XMLHttpRequest();
@@ -113,7 +115,5 @@ export class Weather {
         return vidLink;
     }
 
-    isValidUSZip(zip) {
-        return /^\d{5}(-\d{4})?$/.test(zip);
-     }
+    
 }
