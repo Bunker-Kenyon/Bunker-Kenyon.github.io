@@ -1,0 +1,311 @@
+
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-image: url(stargate.png);
+    background-repeat:repeat-n;
+	background-position: center;
+    color: black;
+    max-width: 1200px;
+    /*display: flex;*/
+    justify-content: center;
+}
+span{
+    font-size: 12px;
+}
+
+/* Style the header */
+.header {
+    text-align: left;
+    font-size: 20px;
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: darkgray;
+    padding: 1px 16px;
+}
+.imgLogo {
+    float: right;
+}
+
+
+
+/* Create two unequal columns that floats next to each other*/
+.col-container {
+    display: table;
+    width: 100%;
+    background: lightblue;
+    padding: 4px;
+}
+
+.col {
+    display: table-cell;
+}
+
+.left {
+    width: 20%;
+    padding: 10px;
+}
+
+.right {
+    width: 80%;
+    padding: 10px;
+}
+
+/*Sections*/
+.section {
+    display: table;
+    width: 100%;
+    background: lightblue;
+    padding: 4px;
+    margin-left: inherit;
+}
+
+
+/*nav bar*/
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the topnav links */
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+    th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #307DC6;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+td:hover {
+    align-items: center;
+    animation: rotated 3s ease infinite alternate;
+
+
+}
+
+
+.input {
+    width: 90%;
+    padding: 12px;
+    border-radius: 4px;
+    resize: vertical;
+}
+#submit {
+    width: 40%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/* credits/disclaimers */
+#credits {
+    width: 100%;
+    font-family: Calibri;
+    font-size: 16px;
+    text-align: center;
+    color:red;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 300px
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #307DC6;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: green;
+}
+
+div {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.dollars {
+    background: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: black;
+    width: 130px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width:300px;
+}
+
+label{
+    font-size: 16px;
+    color: black;
+}
+
+.button {
+    width: 40%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    background-color:cornflowerblue;
+}
+
+pre, code {
+    font-family: monospace, monospace;
+    background-color: lightgrey;
+}
+
+pre {
+    overflow: auto;
+
+}
+
+    pre > code {
+        display: block;
+        word-wrap: normal;
+    }
+
+#trans {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+}
+
+    #trans:hover {
+        width: 300px;
+        height: 300px;
+    }
+
+.transEx {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+}
+.transEx.change {
+    width: 300px;
+    height: 300px;
+}
+
+#img1 {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+}
+#img2 {
+    position: absolute;
+    left: 0;
+    -webkit-transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -o-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+}
+
+
+/*
+#cf {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+    #cf img {
+        position: absolute;
+        left: 0;
+        -webkit-transition: opacity 4s ease-in-out;
+        -moz-transition:    opacity 4s ease-in-out;
+        -o-transition:      opacity 4s ease-in-out;
+        transition:         opacity 4s ease-in-out;
+    }
+
+        #cf img.top {
+            opacity: 0;
+        }
+*/
+
+#anime {
+    height: 400px;
+    width: 400px;
+    background-color: red;
+    /*animation: pulse 3s ease infinite alternate, nudge 4.5s linear infinite alternate;*/
+    border-radius: 100%;
+    align-items: center;
+    /*transform: rotate(360deg);*/
+}
+
+@keyframes pulse {
+    0%, 100% {
+        background-color: blue;
+    }
+
+    50% {
+        background-color: purple;
+    }
+}
+
+@keyframes nudge {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(150px, 0) rotate(90deg);
+    }
+
+    80% {
+        transform: translate(350px, 0) rotate(180eg);
+    }
+}
+
+@keyframes rotated {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+
