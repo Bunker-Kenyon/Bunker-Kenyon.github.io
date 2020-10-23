@@ -1,13 +1,12 @@
 
 body {
     font-family: "Comic Sans MS", cursive, sans-serif;
-    background-image: url(stargate.png);
-    background-repeat:repeat-n;
-	background-position: center;
     color: black;
     max-width: 1200px;
-    /*display: flex;*/
     justify-content: center;
+    background: linear-gradient(blue, grey, white);
+    background-repeat: no-repeat;
+    
 }
 span{
     font-size: 12px;
@@ -19,8 +18,8 @@ span{
     font-size: 20px;
     color: white;
     font-family: "Comic Sans MS", cursive, sans-serif;
-    background-color: darkgray;
     padding: 1px 16px;
+    background-image: url("tech.jpg");
 }
 .imgLogo {
     float: right;
